@@ -1,0 +1,120 @@
+:root{
+    --lightpurple: rgb(253, 109, 241);
+    --darkblue: rgb(2, 37, 87);
+    
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+/* Static Page Top Elements (Scores + Timer) */
+
+.topcontainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 10px 50px 10px;
+    justify-content: space-between;
+
+    
+}
+
+/* Variable HIGH Page elements
+    - Headers
+    - Questions
+*/
+
+.high {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#homepage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#firstquestion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+/* Variable MID Page elements
+    - intro parapgraph
+    - Answers
+    - Final Score
+    - Initial Entry Field
+    -- Highscore list (When "View High Scores" is selected
+*/
+
+
+.mid{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    
+
+}
+
+#midpara{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;   
+
+    text-align: center;
+    width: 50%;
+
+}
+
+/* Bottom Carousel Elements:
+    - Start Quiz Button
+    - Question Outcome Notices
+    -- "Go Back" and "Clear High Scores" buttons when "View High Scores" is selected.
+ */
+
+.low{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.btn{
+    border: none;
+    background-color: var(--darkblue);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
+      0px;
+    display: inline-block;
+    font-size: 22px;
+    color: white;
+    line-height: 10px;
+    margin: 16px 16px 16px 20px;
+    padding: 14px 34px;
+    text-align: center;
+    cursor: pointer;
+}
+
+
