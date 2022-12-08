@@ -40,25 +40,22 @@
      -->
 
   <!-- TOP CONTAINER - STATIC -->
-  <section class="topcontainer">
-    <button id="scorebutton">View High Scores</button>
+  <section id="top-Section">
+    <button type="button" id="scoreButton">View High Scores</button>
     <div id="countdown"></div>
   </section>
 
-  <section class="carousel">
-    <!-- FIRST CAROUSEL ELEMENT - HOMEPAGE -->
-    <section class="carouselitem" id="homepage">
 
-      <section class="high">
-        <header id="homepageheader">
+
+<!-- HOMEPAGE - SECTION-->
+    
+  <section class="Pages" id="homePage-Section">
+      
+        <header id="homePage-Header">
           <h1>
             Coding Quiz Challenge
           </h1>
         </header>
-      </section>
-
-
-      <section class="mid">
 
         <div id="midpara">
           <p>
@@ -67,154 +64,150 @@
           </p>
         </div>
 
-        <button class="btn" id="startbutton">Start Quiz</button>
-
-      </section>
-
-
+        <button type="button" class="btn" id="startbutton">Start Quiz</button>
+      
+  </section>
 
 
-      <!-- ---Question pages--- -->
 
+                                 <!-- ---Question pages--- -->
 
-      <!-- SECOND CAROUSEL ELEMENT - FIRST QUESTION -->
-      <section class="carouselitem" id="firstquestion">
-
-        <section class="high">
-          <header id="firstquestionheader">
-            <h1>
-              Commonly used data types DO NOT include:
-            </h1>
-          </header>
-        </section>
-
-
-        <section class="mid">
-          <div class="answers" id="firstanswers">
-            <button class="btn" id="firstfirst" data-number="1" data-state="true">1. Strings</button>
-            <button class="btn" id="firstsecond" data-number="2" data-state="true">2. Booleans</button>
-            <button class="btn" id="firstthird" data-number="3" data-state="false">3. Alerts</button>
-            <button class="btn" id="firstfourth" data-number="4" data-state="true">4. Numbers</button>
-          </div>
-        </section>
-
-        <section class="low">
-
-        </section>
-      </section>
-
-    </section>
-
-    <!-- THIRD CAROUSEL ELEMENT - SECOND QUESTION -->
-    <section class="carouselitem" id="secondquestion">
-
-      <section class="high">
-        <header id="secondquestionheader">
+    <!-- FIRST QUESTION - SECTION-->
+  <section class="Pages" id="firstQuestion-Section">
+      
+        <header id="firstQuestion-Header">
           <h1>
-            The condition in an if/else statement is enclosed with __________:
+            1) The condition in an if/else statement is enclosed with __________:
           </h1>
         </header>
-      </section>
-
-
-      <section class="mid">
-        <div class="answers" id="secondanswers">
-          <button class="btn" id="secondfirst">1. Quotes</button>
-          <button class="btn" id="secondsecond">2. Curly Brackets</button>
-          <button class="btn" id="secondthird">3. Parenthesis</button>
-          <button class="btn" id="secondfourth">4. Square Brackets</button>
+      
+        <div class="answers" id="firstAnswers">
+          <button type="button" class="btn" id="firstFirst" data-state="incorrect">1. Quotes</button>
+          <button type="button" class="btn" id="firstSecond" data-state="incorrect">2. Curly Brackets</button>
+          <button type="button" class="btn" id="firstThird" data-state="correct">3. Parenthesis</button>
+          <button type="button" class="btn" id="firstFourth" data-state="incorrect">4. Square Brackets</button>
         </div>
-      </section>
-
-      <section class="low">
-
-      </section>
-    </section>
-
+            
   </section>
 
-  <!-- FOURTH CAROUSEL ELEMENT - THIRD QUESTION -->
-  <section class="carouselitem" id="thirdquestion">
+  
 
-    <section class="high">
-      <header id="thirdquestionheader">
+    <!-- SECOND QUESTION - SECTION-->
+  <section class="Pages" id="secondQuestion-Section">
+     
+        <header id="secondQuestion-Header">
+          <h1>
+            2) Arrays in JavaScript can be used to store __________:
+          </h1>
+        </header>
+           
+        <div class="answers" id="secondanswers">
+          <button type="button"  class="btn" id="secondfirst" data-state="incorrect">1. Numbers & Strings</button>
+          <button type="button" class="btn" id="secondsecond" data-state="incorrect">2. Other Arrays</button>
+          <button type="button" class="btn" id="secondthird" data-state="incorrect">3. Booleans</button>
+          <button type="button" class="btn" id="secondfourth" data-state="correct">4. All of the Above</button>
+        </div>
+
+        <div class="outcome" id="firstOutcome-Div"></div>
+           
+  </section>
+
+  
+
+
+    <!-- THIRD QUESTION - SECTION -->
+  <section class="Home" id="thirdQuestion-Section">
+
+        <header id="thirdQuestion-Header">
+          <h1>
+            3) String values must be enclosed within __________ when being assigned to variables:
+          </h1>
+        </header>
+
+        <div class="answers" id="thirdanswers">
+          <button type="button" class="btn" id="thirdfirst" data-state="incorrect">1. Commas</button>
+          <button type="button" class="btn" id="thirdsecond" data-state="incorrect">2. Curly Brackets</button>
+          <button type="button" class="btn" id="thirdthird" data-state="correct">3. Quotes</button>
+          <button type="button" class="btn" id="thirdfourth" data-state="incorrect">4. Parenthesis</button>
+        </div>
+
+        <div class="outcome" id="secondOutcome-Div"></div>
+            
+  </section>
+
+
+     <!-- FOURTH QUESTION - SECTION -->
+  <section class="Pages" id="fourthQuestion-Section">
+      
+        <header id="fourthQuestion-Header">
+          <h1>
+            4) A very useful tool used during development and debugging for printing content to the debugger is:
+          </h1>
+        </header>
+
+        <div class="answers" id="fourthanswers">
+          <button type="button" class="btn" id="fourthfirst" data-state="incorrect">1. Javascript</button>
+          <button type="button" class="btn" id="fourthsecond" data-state="incorrect">2. Terminal/Bash</button>
+          <button type="button" class="btn" id="fourththird" data-state="incorrect">3. For-Loops</button>
+          <button type="button" class="btn" id="fourthfourth" data-state="correct">4. Console.Log</button>
+        </div>
+
+        <div class="outcome" id="thirdOutcome-Div"></div>
+            
+  </section>
+
+
+     <!-- FIFTH QUESTION - SECTION -->
+     <section class="Pages" id="fifthQuestion-Section">
+      
+      <header id="fifthQuestion-Header">
         <h1>
-          Arrays in JavaScript can be used to store __________:
+          5) Commonly used data types DO NOT include:
         </h1>
       </header>
-    </section>
 
-
-    <section class="mid">
-      <div class="answers" id="thirdanswers">
-        <button class="btn" id="thirdfirst">1. Numbers & Strings</button>
-        <button class="btn" id="thirdsecond">2. Other Arrays</button>
-        <button class="btn" id="thirdthird">3. Booleans</button>
-        <button class="btn" id="thirdfourth">4. All of the Above</button>
-      </div>
-    </section>
-
-    <section class="low">
-
-    </section>
-  </section>
-
-  </section>
-
-
-  <!-- FIFTH CAROUSEL ELEMENT - FOURTH QUESTION -->
-  <section class="carouselitem" id="fourthquestion">
-
-    <section class="high">
-      <header id="fourthquestionheader">
-        <h1>
-          String values must be enclosed within __________ when being assigned to variables:
-        </h1>
-      </header>
-    </section>
-
-
-    <section class="mid">
       <div class="answers" id="fourthanswers">
-        <button class="btn" id="fourthfirst">1. Commas</button>
-        <button class="btn" id="fourthsecond">2. Curly Brackets</button>
-        <button class="btn" id="fourththird">3. Quotes</button>
-        <button class="btn" id="fourthfourth">4. Parenthesis</button>
+        <button type="button" class="btn" id="fifthfirst" data-state="incorrect">1. Strings</button>
+        <button type="button" class="btn" id="fifthsecond" data-state="incorrect">2. Booleans</button>
+        <button type="button" class="btn" id="fifththird" data-state="correct">3. Alerts</button>
+        <button type="button" class="btn" id="fifthfourth" data-state="incorrect">4. Numbers</button>
       </div>
-    </section>
 
-    <section class="low">
-
-    </section>
+      <div class="outcome" id="fourthOutcome-Div"></div>
+          
   </section>
 
+  <!-- END PAGE - SECTION -->
 
-  <!-- SIXTH CAROUSEL ELEMENT - FIFTH QUESTION -->
-  <section class="carouselitem" id="fifthquestion">
+  <section class="Pages" id="endPage-Section">
 
-    <section class="high">
-      <header id="fifthquestionheader">
-        <h1>
-          A very useful tool used during development and debugging for printing content to the debugger is:
-        </h1>
-      </header>
-    </section>
+    <header id="endPage-Header">
+      <h1>
+        All Done!
+      </h1>           
+    </header>
 
+    <label for="initials">Initials: </label>
+    <input type="initials" name="initials" id="initial-input" />
 
-    <section class="mid">
-      <div class="answers" id="fifthanswers">
-        <button class="btn" id="fifthfirst">1. Javascript</button>
-        <button class="btn" id="fifthsecond">2. Terminal/Bash</button>
-        <button class="btn" id="fifththird">3. For-Loops</button>
-        <button class="btn" id="fifthfourth">4. Console.Log</button>
-      </div>
-    </section>
+    <button type="button" class="btn" id="submit-Button">Submit!</button>
 
-    <section class="low">
+    <div class="outcome" id="fifthOutcome-Div"></div>
 
-    </section>
   </section>
 
+  <!-- HIGHSCORE PAGE - SECTION -->
+
+  <section class="Pages" id="scorePage-Section">
+    <h1>Highscores</h1>
+    <ul id="highscore-List">
+      
+    </ul>
+
+    <button type="button" class="resetbtn">Play Again!</button>
+
+  </section>
+  
 
 
 
