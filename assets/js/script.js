@@ -31,14 +31,11 @@ var submitButton = document.querySelector("#submit-Button");
 var scoreButton = document.querySelector("#scoreButton");
 
 
-
 //------------------Homepage---------------------
-//1/When the user clicks on the "Start Quiz" button
-//1/Then the user will be taken to the next page
+//When the user clicks on the "Start Quiz" button
+//Then the user will be taken to the next page
 
 //assign pages to variables as objects
-
-
 
 var pages = [
   homePage,     //0
@@ -61,15 +58,15 @@ var outcomes = [
 ]
 
 
-
-
-
-//DONE//1/When the user clicks on the "Start Quiz" button
-//DONE//1/Then the timer starts from 75 counting down
-//DONE//-- this timer will persist, and continue to countdown through all pages until endpage or '0'
-//DONE//3/In the top left corner, the timer for the webpage can be seen as its starting value of "0"
+//When the user clicks on the "Start Quiz" button
+//Then the timer starts from 75 counting down
+//-- this timer will persist, and continue to countdown through all pages until endpage or '0'
+//In the top left corner, the timer for the webpage can be seen as its starting value of "0"
 timerEl.textContent = 'Time: 0';
-var timeLeft = 7;
+var timeLeft = 75;
+
+//Establish counter variable that responds to button element clicks.
+var count = 0;
 
 function countdown() {
     
@@ -92,8 +89,8 @@ function countdown() {
         // Use `clearInterval()` to stop the timer
         clearInterval(timeInterval);
         // Call the `displayMessage()` function
-
-      //Display highscore table
+        
+      //Display highscore table if timer reaches "0"
       pages[0].classList.remove("visible");
       pages[0].classList.add("hidden");
       pages[1].classList.remove("visible");
@@ -110,19 +107,23 @@ function countdown() {
       pages[7].classList.remove("visible");
       pages[7].classList.add("hidden");
       
-        
+      }
+
+      // When the user reaches the endpage (index 6), capture the time as a score.
+      if(count === 6){
+        clearInterval(timeInterval);
       }
     }, 1000);
   }
 
   startButton.addEventListener("click", countdown);
 
+  
+  
+
 //------------------Question Pages-------------
 //When the User picks an answer from one of 4 options
 //ANY answer will progress to the next question
-
-//Establish counter variable that responds to button element clicks.
-var count = 0;
 
 if(count === 0){
 
@@ -251,7 +252,6 @@ if(count === 0){
   }
 
 
-
 // Attach event listener to increment button element
 document.addEventListener("click", function(event){
 
@@ -264,7 +264,15 @@ document.addEventListener("click", function(event){
     count++;
     hideOtherPages();
     
-  } 
+  }
+
+  if(count === 6){
+    var finishTime = timeLeft;
+
+  }
+  console.log("TIME FINISHED!: " + finishTime);
+
+
   
 });
 
@@ -308,7 +316,8 @@ document.addEventListener("click", function(event){
   } else {
     null;
   }
-
+  //The WRONG answer will deduct 10 seconds from the timer
+  //The RIGHT answer will not have any effect on the timer
   if(state === "incorrect"){
     timeLeft = timeLeft - 10;
 
@@ -316,43 +325,27 @@ document.addEventListener("click", function(event){
 
 })
 
-//The WRONG answer will deduct 10 seconds from the timer
-//The RIGHT answer will not have any effect on the timer
 
+//-----------------Endpage & Scorepage-----------------------
 
-  
-
-
-
-
-
-//-----------------Endpage-----------------------
 //When all questions are answered, the time-left is presented as the 'final score'
-//--- When the timer reaches '0', the time left is presented as the 'final score'
-
-
-
-
-
-//-----------------ScorePage-----------------------
-
 
 // The highscores will consist of the initials, and the 'time-remaining' for each user
 // who has pressed submit
-
-
 // When the user clicks submit, their score is added to the list of scores 
 // and they are taken to the high-scores page.
 var scores = [];
+var times = [];
 
 function renderScores(){
 
   scoreList.innerHTML = "";
   for(var i = 0; i < scores.length; i++){
     var score = scores[i];
+    var time = times[i];
 
     var li = document.createElement("li");
-    li.textContent = score;
+    li.textContent = score + time;
     li.setAttribute("data-index", i);
 
     scoreList.appendChild(li);
@@ -360,20 +353,27 @@ function renderScores(){
 
 }
 
+// Retrieve scored objects (scores/times) from local storage, and render result
 function init() {
   var storedScores = JSON.parse(localStorage.getItem("scores"));
+  var storedTimes = JSON.parse(localStorage.getItem("times"));
 
   if(storedScores !== null){
     scores = storedScores;
   }
 
-  renderScores;
+  if(storedTimes !== null){
+    times = storedTimes;
+  }
+
+  renderScores();
 }
 
 
 
 function storeScores() {
   localStorage.setItem("scores", JSON.stringify(scores));
+  localStorage.setItem("times", JSON.stringify(times));
 }
 
 
@@ -383,13 +383,23 @@ submitButton.addEventListener("click", function(event){
   event.preventDefault;
 
   var scoreText = scoreInput.value.trim();
+  var timeText = timeLeft;
 
   if(scoreText === ""){
     return;
   }
 
-  scores.push(scoreText);
+  if(timeText === ""){
+    return;
+  }
+
+  scores.push(scoreText + ": ");
+  times.push(timeText + " Seconds");
+
   scoreInput.value="";
+
+  
+
 
   storeScores();
   renderScores();

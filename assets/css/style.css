@@ -1,6 +1,7 @@
 :root{
     --lightpurple: rgb(253, 109, 241);
     --darkblue: rgb(2, 37, 87);
+    --lightblue: rgb(59, 138, 248);
     
 }
 
@@ -11,14 +12,28 @@
 
 /* ---Static Page Top Elements (Scores + Timer)--- */
 
-.top-section{
+
+
+body{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    padding: 10px 10px 50px 10px;
-    justify-content: space-between;
+    justify-content: center;
     
 }
+
+#top-Section{
+    display: flex;
+    flex-direction: row;
+    padding: 10px 20px 50px 20px;
+    justify-content: space-between;
+
+    width: 80%;
+    
+    
+}
+
+
 
 /* ---Section States--- */
 
@@ -34,8 +49,24 @@
     align-items: center;
     justify-content: center;
 
+    
     text-align: center;
     width: 50%;
+}
+
+.answers{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: flex-start;
+
+}
+
+.outcome{
+    color: red;
+    font-size: 25px;
+    font-style: italic;
+    
 }
 
 /* Button Styling */
@@ -43,6 +74,22 @@
 .btn{
     border: none;
     background-color: var(--darkblue);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
+      0px;
+    display: inline-block;
+    font-size: 22px;
+    color: white;
+    line-height: 10px;
+    margin: 16px 16px 16px 20px;
+    padding: 14px 34px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn:hover{
+    border: none;
+    background-color: var(--lightblue);
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
       0px;
