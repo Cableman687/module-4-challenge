@@ -2,8 +2,6 @@
 
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
-
 - The motivation to complete this challenge was to test my own skills gained in the most recent week of the coding bootcamp, including but not limited to; Intervals, Listeners, Events, bubbling, Data Attributes and many more.
 - This project was built as a testing ground for my own retention of the aforementioned skills.
 
